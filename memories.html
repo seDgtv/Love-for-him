@@ -1,92 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Our Memories ❤️</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #ff9eb5, #ffc3d1);
-      text-align: center;
-      font-family: Arial, sans-serif;
-      overflow: hidden;
-    }
+    <title>Every Moment with You</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    .container {
-      padding: 40px 20px;
-    }
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Georgia', serif;
+            background: #f5efe6;
+            text-align: center;
+            color: #4b3f35;
+        }
 
-    h1 {
-      color: white;
-      font-size: 30px;
-    }
+        h1 {
+            padding-top: 30px;
+            font-size: 28px;
+        }
 
-    img {
-      width: 80%;
-      max-width: 300px;
-      border-radius: 20px;
-      margin-top: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            padding: 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-    p {
-      color: white;
-      font-size: 18px;
-      margin-top: 20px;
-    }
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
 
-    /* Floating hearts */
-    .heart {
-      position: absolute;
-      bottom: -10px;
-      font-size: 20px;
-      animation: floatUp 6s linear infinite;
-    }
+        .card:hover {
+            transform: scale(1.05);
+        }
 
-    @keyframes floatUp {
-      0% { transform: translateY(0); opacity: 1; }
-      100% { transform: translateY(-100vh); opacity: 0; }
-    }
-  </style>
+        .card img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .card p {
+            margin-top: 12px;
+            font-size: 15px;
+        }
+
+        .back-btn {
+            margin: 30px;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            background: #b08968;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="container">
-  <h1>Our Memories, Pa ❤️</h1>
+<h1>Every Moment with You, Pa 📸</h1>
 
-  <!-- REPLACE photo.jpg with your photo name -->
-  <img src="photo.jpg" alt="Our Photo">
+<div class="gallery">
 
-  <p>
-    Every moment with you is my favorite memory.  
-    No distance, no mistakes, nothing can change what my heart feels for you.  
-    You are my always and forever.
-  </p>
+    <div class="card">
+        <img src="photo1.jpg">
+        <p>The day I knew you were my safe place 🤍</p>
+    </div>
 
-  <!-- Add your song file later -->
-  <audio autoplay loop>
-    <source src="song.mp3" type="audio/mpeg">
-  </audio>
+    <div class="card">
+        <img src="photo2.jpg">
+        <p>Your smile that melts my heart every time 🥺</p>
+    </div>
+
+    <div class="card">
+        <img src="photo3.jpg">
+        <p>The way you hold my hand like I’m your whole world ✨</p>
+    </div>
+
+    <div class="card">
+        <img src="photo4.jpg">
+        <p>Laughing together like nothing else matters 💞</p>
+    </div>
+
+    <div class="card">
+        <img src="photo5.jpg">
+        <p>Our quiet moments that mean everything 💌</p>
+    </div>
+
+    <div class="card">
+        <img src="photo6.jpg">
+        <p>Every memory with you feels like home 🏡❤️</p>
+    </div>
 
 </div>
 
-<script>
-  // Create floating hearts
-  function createHeart() {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.innerHTML = "💖";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = Math.random() * 20 + 20 + "px";
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-      heart.remove();
-    }, 6000);
-  }
-
-  setInterval(createHeart, 500);
-</script>
+<button class="back-btn" onclick="window.location.href='surprise.html'">
+Back to Surprise 💝
+</button>
 
 </body>
 </html>
