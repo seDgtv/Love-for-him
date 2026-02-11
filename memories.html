@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Our Memories ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #ff9eb5, #ffc3d1);
+      text-align: center;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .container {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 30px;
+    }
+
+    img {
+      width: 80%;
+      max-width: 300px;
+      border-radius: 20px;
+      margin-top: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    p {
+      color: white;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      bottom: -10px;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Our Memories, Pa ❤️</h1>
+
+  <!-- REPLACE photo.jpg with your photo name -->
+  <img src="photo.jpg" alt="Our Photo">
+
+  <p>
+    Every moment with you is my favorite memory.  
+    No distance, no mistakes, nothing can change what my heart feels for you.  
+    You are my always and forever.
+  </p>
+
+  <!-- Add your song file later -->
+  <audio autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+</div>
+
+<script>
+  // Create floating hearts
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "💖";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 20 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 6000);
+  }
+
+  setInterval(createHeart, 500);
+</script>
+
+</body>
+</html>
