@@ -129,5 +129,13 @@ style.innerHTML = `
 }`;
 document.head.appendChild(style);
 </script>
+    <audio id="bgMusic" src="Memories.mp3"></audio>
+
+<script>
+window.addEventListener("click", function() {
+    const music = document.getElementById("bgMusic");
+    music.play();
+}, { once: true });
+</script>
 </body>
 </html>
