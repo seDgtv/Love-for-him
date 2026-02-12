@@ -1,93 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Our Memories ❤️</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You, Pa 🤍</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      background: linear-gradient(to bottom, #ff758c, #ff7eb3);
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
-    }
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, #f8ede3, #dfd3c3);
+            color: #3a2e2a;
+            text-align: center;
+            cursor: pointer;
+        }
 
-    .container {
-      max-width: 500px;
-      margin: auto;
-    }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
 
-    h1 {
-      margin-bottom: 20px;
-    }
+        #typing {
+            max-width: 700px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.8;
+            white-space: pre-line;
+            min-height: 200px;
+        }
 
-    p {
-      line-height: 1.7;
-      margin-bottom: 15px;
-    }
-
-    img {
-      width: 100%;
-      border-radius: 20px;
-      margin-top: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-  </style>
+        .next-btn {
+            margin-top: 40px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background: #b08968;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
+<h1>Tap Anywhere, Pa 🤍</h1>
 
-  <h1>For You, Pa ❤️</h1>
+<p id="typing"></p>
 
-  <p>Pa…</p>
+<button class="next-btn" onclick="window.location.href='memories.html'">
+Our Memories 📸
+</button>
 
-  <p>
-  I know I’m not perfect. I know I’ve made mistakes that hurt you deeply.
-  And I carry that in my heart every single day.
-  </p>
-
-  <p>
-  But even after everything, you chose to stay.
-  You chose to love me when it would’ve been easier to walk away.
-  And that means more to me than words could ever explain.
-  </p>
-
-  <p>
-  This distance hurts sometimes, Pa…
-  But my heart has never left you. Not for a second.
-  Every day I wake up choosing you.
-  Every day I am grateful that you are mine.
-  </p>
-
-  <p>
-  Thank you for being patient with me.
-  Thank you for loving me even when I didn’t love myself properly.
-  You are my safe place. My comfort. My home.
-  </p>
-
-  <p>
-  I promise to love you better.
-  More honestly. More gently. More deeply.
-  </p>
-
-  <p>
-  I love you, Pa. ❤️ <br>
-  Always.
-  </p>
-
-  <!-- Replace with your real photo file name -->
-  
-
-  <!-- Replace with your real song file name -->
-  <audio autoplay loop>
+<audio id="bgMusic" loop>
     <source src="song.mp3" type="audio/mpeg">
-  </audio>
+</audio>
 
-</div>
+<script>
+const text = `Pa…
+
+I know I’m not perfect. I know I’ve made mistakes that hurt you deeply.
+And I carry that in my heart every single day.
+
+But even after everything, you chose to stay.
+You chose to love me when it would’ve been easier to walk away.
+And that means more to me than words could ever explain.
+
+This distance hurts sometimes, Pa…
+But my heart has never left you. Not for a second.
+Every day I wake up choosing you.
+Every day I am grateful that you are mine.
+
+Thank you for being patient with me.
+Thank you for loving me even when I didn’t love myself properly.
+You are my safe place. My comfort. My home.
+
+I promise to love you better.
+More honestly. More gently. More deeply.
+
+I love you, Pa.
+Always. ❤️`;
+
+let i = 0;
+const speed = 40;
+const typingElement = document.getElementById("typing");
+const music = document.getElementById("bgMusic");
+
+function typeWriter() {
+    if (i < text.length) {
+        typingElement.innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+    }
+}
+
+document.body.addEventListener("click", function startExperience() {
+    music.play();
+    typeWriter();
+    document.querySelector("h1").innerText = "For You, Pa 🤍";
+    document.body.removeEventListener("click", startExperience);
+});
+</script>
 
 </body>
 </html>
