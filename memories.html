@@ -103,6 +103,31 @@
 <button class="back-btn" onclick="window.location.href='surprise.html'">
 Back to Surprise 💝
 </button>
+<script>
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.innerHTML = "❤️";
+    heart.style.position = "fixed";
+    heart.style.bottom = "0";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = "20px";
+    heart.style.animation = "floatUp 5s linear";
+    document.body.appendChild(heart);
 
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 600);
+
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to { transform: translateY(-100vh); opacity: 0; }
+}`;
+document.head.appendChild(style);
+</script>
 </body>
 </html>
