@@ -15,6 +15,7 @@
             text-align: center;
             font-family: 'Georgia', serif;
             overflow: hidden;
+            transition: background 1s ease;
         }
 
         .box {
@@ -58,7 +59,7 @@
 
         .hidden-message {
             margin-top: 30px;
-            font-size: 20px;
+            font-size: 22px;
             display: none;
         }
     </style>
@@ -89,7 +90,7 @@
     </div>
 
     <div class="hidden-message" id="loveMessage">
-        I knew it… because we’re forever. 🤍✨
+        Forever starts now, Pa 🤍✨
     </div>
 
 </div>
@@ -99,6 +100,7 @@ const noBtn = document.getElementById("noBtn");
 const yesBtn = document.getElementById("yesBtn");
 const message = document.getElementById("loveMessage");
 
+// Make NO run away
 noBtn.addEventListener("mouseover", function() {
     const x = Math.random() * (window.innerWidth - 100);
     const y = Math.random() * (window.innerHeight - 100);
@@ -106,9 +108,37 @@ noBtn.addEventListener("mouseover", function() {
     noBtn.style.top = y + "px";
 });
 
+// When YES is clicked
 yesBtn.addEventListener("click", function() {
+
     message.style.display = "block";
+    document.body.style.background = "linear-gradient(to bottom, #f3d9dc, #f8ede3)";
+
+    // Heart explosion
+    for (let i = 0; i < 40; i++) {
+        let heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = Math.random() * 100 + "vh";
+        heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+        heart.style.animation = "fadeOut 2s ease-out forwards";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 2000);
+    }
 });
+
+// Fade animation
+const style = document.createElement("style");
+style.innerHTML = `
+@keyframes fadeOut {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(2); }
+}`;
+document.head.appendChild(style);
 </script>
 
 </body>
